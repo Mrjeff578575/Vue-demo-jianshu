@@ -16,7 +16,7 @@
 				:style="{ background: article.article.bg, backgroundSize: '100%', backgroundRepeat: 'no-repeat',      backgroundColor: '#ffffff'}" 
 				<div class="content">
 					<a class="mask" href="#">
-						<div class="button">阅读全文</div>
+						<div class="button">阅读全文></div>
 					</a>
 					<div class="bonus-text">
 						<div class="bonus-text-title">{{ article.article.title}}</div>
@@ -46,7 +46,7 @@
 			}
 		},
 		ready: function() {
-			this.articles = [{article: this.texts.Jan}, {article: this.texts.Feb}, {article: this.texts.Mar}]
+			this.articles = [{article: this.texts.Jan}, {article: this.texts.Feb}, {article: this.texts.Mar}, {article: this.texts.Apr}, {article: this.texts.May}, {article: this.texts.Jun}, {article: this.texts.Jul}, {article: this.texts.Aug}, {article: this.texts.Sep}, {article: this.texts.Oct}, {article: this.texts.Nov},  {article: this.texts.Dec}]
 		}
 	}
 </script>

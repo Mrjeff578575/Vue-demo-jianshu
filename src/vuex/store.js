@@ -213,7 +213,7 @@ const mutations = {
 					comment:'248',
 					like:'2342',
 					pay:'2',
-					src:'url(../../static/vue-demo-hot.jpg)'
+					src:'url(../../static/vue-demo-hot.jpg'
 				},
 				sec: {
 					author:'徐妮',
@@ -223,7 +223,7 @@ const mutations = {
 					comment:'248',
 					like:'2342',
 					pay:'2',
-					src:'url(../../static/vue-demo-hot.jpg)'
+					src:'url(../../static/vue-demo-hot.jpg'
 				},
 				thi: {
 					author:'徐双妮',
@@ -233,7 +233,7 @@ const mutations = {
 					comment:'248',
 					like:'2342',
 					pay:'2',
-					src:'url(../../static/vue-demo-hot.jpg)'
+					src:'url(../../static/vue-demo-hot.jpg'
 				}
 			},
 			new: {

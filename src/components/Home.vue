@@ -2,7 +2,7 @@
 <div>
 	<div class="showbar">
 		<div class="cover-image"></div>
-		<div class="text">
+		<div class="text" style="text-shadow:1px 1px 1px #000000">
 			<h1>简书</h1>
 			<h3>交流故事，沟通想法</h3>
 			<p>一个基于内容分享的社区</p>
@@ -87,12 +87,12 @@
 		margin: 0 5px;
 		display: inline-block;
 		padding: 5px 10px;
-		border: 1px solid #efefef;
+		border: 1px solid #d9d9d9;
 		border-radius: 10px;
 	}
 </style>
 <script>
-import { displayArticle} from '../../static/actions'
+import { displayArticle} from '../vuex/actions'
 export default{
 	vuex: {
 		getters: {

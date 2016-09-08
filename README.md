@@ -2,8 +2,6 @@
 
 > A Vue.js project
 
-#网站样式，才用vue列表渲染，方便后期维护
-![网站样式，才用vue列表渲染，方便后期维护](https://raw.githubusercontent.com/Mrjeff578575/markdownphoto/master/vue-demo-jianshu.jpg)
 ## Build Setup
 
 ``` bash
