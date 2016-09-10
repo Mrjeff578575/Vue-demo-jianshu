@@ -1,4 +1,10 @@
-# vue-demo
+# vue-demo-jianshu
+
+##项目结构
+![image](https://github.com/Mrjeff578575/markdownphoto/blob/master/%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84.jpg)
+
+##项目简介
+采用vue vue-router vuex实现简书的基本界面和功能
 
 > A Vue.js project
 
