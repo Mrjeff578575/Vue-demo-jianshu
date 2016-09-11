@@ -8,10 +8,11 @@
       <li :class="{active: show === 'topic'}">
         <a @click="show = 'topic'" v-link="'/topic/topic_article'"><i class="fa fa-th"></i><span>&nbsp;&nbsp;专题</span></a>
       </li>
-      <li><a href="#"><i class="fa fa-mobile"></i><span>&nbsp;&nbsp;下载手机应用</span></a></li>
+      <li :class="{active: show === 'download'}">
+        <a @click="show = 'download'" v-link="'/download'"><i class="fa fa-mobile"></i><span>&nbsp;&nbsp;下载手机应用</span></a></li>
     </ul>
     <ul class="nav-user">
-      <li><a href=""><i class="fa fa-font"></i><span>&nbsp;&nbsp;显示模式</span></a></li>
+      <li><a href="#"><i class="fa fa-font"></i><span>&nbsp;&nbsp;显示模式</span></a></li>
       <li><a v-link="'/login'"><i class="fa fa-sign-in"></i><span>&nbsp;&nbsp;登录</span></a></li>
     </ul>
   </div>
@@ -20,8 +21,8 @@
   </div>
   <div class="rightbar">
     <nav>
-      <a v-link="'/login'"><i class="fa fa-sign-in"></i>登录</a>
-      <a href="#"><i class="fa fa-user"></i>注册</a>
+      <a v-link="'/login'" @click="changeLogin('login')"><i class="fa fa-sign-in"></i>登录</a>
+      <a v-link="'/login'" @click="changeLogin('register')"><i class="fa fa-user"></i>注册</a>
     </nav>
   </div>
 </div>
@@ -46,7 +47,17 @@
   .dropdown .active a{
     color: #ffffff;
   }
+  @media screen and (max-width: 1100px){
+    .home{
+      width: calc(100% - 80px);
+      margin-right: 0;
+    }
+  }
   @media screen and (max-width: 1300px){
+    .home{
+      width: calc(100% - 240px);
+      margin-left: 40px;
+    }
     .nav-user li{
         width: 40px;
         height: 30px;
@@ -56,10 +67,6 @@
       transition: all 0.5s;
       width: 40px;
       overflow: hidden;
-    }
-    .showbar{
-      transform: translateX(-130px);
-      transition: all 0.5s;
     }
     .sidebar li{
       padding: 20px 0;
@@ -79,6 +86,7 @@
 </style>
 <script>
 import store from './vuex/store'
+import { changeLogin } from './vuex/actions'
 
 export default {
   store,
@@ -86,6 +94,12 @@ export default {
     return {
       show:'home'
     }
+  },
+  vuex:{
+    actions:{
+      changeLogin
+    }
   }
+
 }
 </script>

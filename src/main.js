@@ -8,6 +8,7 @@ import article from './components/Article.vue'
 import bonus from './components/Bonus.vue'
 import login from './components/Login.vue'
 import topic_article from './components/Topic_article.vue'
+import download from './components/Download.vue'
 
 Vue.use(VueRouter)
 
@@ -35,6 +36,9 @@ router.map({
 	},
 	'/login': {
 		component: login
+	},
+	'/download': {
+		component: download
 	}
 })
 

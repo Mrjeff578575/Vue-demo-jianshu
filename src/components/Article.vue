@@ -8,7 +8,7 @@
 			<span class="small-text">喜欢 {{article.like}} -</span>
 			<span class="small-text">打赏 {{article.pay}}</span>
 			<span class="image" 
-				:style="{background:article.src,backgroundSize:'100%',backgroundRepeat:'no-repat'}">
+				:style="{backgroundImage:article.src, backgroundSize:'100%', backgroundRepeat:'no-repat'}">
 			</span>
 		</li>
 	</ul>

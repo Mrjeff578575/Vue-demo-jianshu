@@ -2,19 +2,21 @@
 	<div class="login-container">
 		<div class="login-logo"></div>
 		<div class="login-header">
-			<a href="#">&nbsp;&nbsp;&nbsp;&nbsp;登录&nbsp;&nbsp;&nbsp;&nbsp;·</a>
-			<a href="#">&nbsp;&nbsp;&nbsp;&nbsp;注册&nbsp;&nbsp;&nbsp;&nbsp;</a></div>
-		<div class="login-input">
-			<form class="form-horizontal" accept-charset="UTF-8" method="post">
+			<a  :class="{active: loginway == 'login'}" 
+						@click="changeLogin('login')">&nbsp;&nbsp;&nbsp;&nbsp;登录&nbsp;&nbsp;&nbsp;&nbsp;·</a>
+			<a  :class="{active: loginway == 'register'}" 
+						@click="changeLogin('register')">&nbsp;&nbsp;&nbsp;&nbsp;注册&nbsp;&nbsp;&nbsp;&nbsp;</a></div>
+		<div class="login-input" v-if="loginway === 'login' ">
+			<form class="form_login" accept-charset="UTF-8" method="post">
 				<div class="username">
 					<span class="span1"><i class="fa fa-user"></i></span>
-					<input type="text" name="sign_in[name]" placeholder="手机号码/电子邮件" class="span2">
+					<input type="text" name="register_name" placeholder="选一个昵称" class="span2">
 				</div>
 				<div class="password">
 					<span class="span1"><i class="fa fa-unlock-alt"></i></span>
-					<input type="password" name="sign_in[password]" placeholder="密码" class="span2">
+					<input type="password" name="register_password" placeholder="密码" class="span2">
 				</div>
-				<button class="login-btn" type="submit"><span>登录</span></button>
+				<button class="login-btn btn" type="submit"><span>登录</span></button>
 				<div class="login-control" style="color:#555555;font-size:12px;">
 					<span style="float:left" class="checkbox" :class="{checked: checked === true}"
 						@click="checked = !checked">
@@ -25,7 +27,25 @@
 					<span style="float:right"><a href="#" style="color:#555555">忘记密码</a></span>
 				</div>
 			</form>
-		</div>		
+		</div>
+		<div class="login-input" v-if="loginway === 'register'">
+			<form class="form_register" accept-charset="UTF-8" method="post">
+				<div class="email">
+					<span class="span1"><i class="fa fa-envelope-o"></i></span>
+					<input type="text" name="email_adress" placeholder="你的邮件地址" class="span2">
+				</div>
+				<div class="username">
+					<span class="span1"><i class="fa fa-user"></i></span>
+					<input type="text" name="sign_in[name]" placeholder="手机号码/电子邮件" class="span2">
+				</div>
+				<div class="password">
+					<span class="span1"><i class="fa fa-unlock-alt"></i></span>
+					<input type="password" name="sign_in[password]" placeholder="密码" class="span2">
+				</div>
+				<button class="register-btn btn" type="submit"><span>注册</span></button>
+				<p class="register_text">点击 “注册” 或下方社交登录按钮，即表示您同意并愿意遵守简书 <a href="#">用户协议</a> 和 <a href="#">隐私政策</a> 。</p>
+			</form>
+		</div>			
 		<div class="login-way">
 			<h5>您还可以通过以下方式登录</h5>
 			<ul>
@@ -39,10 +59,19 @@
 	</div>
 </template>
 <script>
+import { changeLogin } from '../vuex/actions'
 	export default{
 		data () {
 			let checked = 'true'
 			return {checked}
+		},
+		vuex:{
+			getters:{
+				loginway: state => state.loginway
+			},
+			actions:{
+				changeLogin
+			}
 		}
 	}
 </script>
@@ -50,8 +79,13 @@
 	form{
 		width: 300px;
 		margin: 0 auto;
-		height: 245px;
 		border-bottom: 1px solid rgba(113,113,113,0.17);
+	}
+	.form_login{
+		height: 245px;
+	}
+	.form_register{
+		height: 300px;
 	}
 	.login-container{
 		padding: 125px 0 50px;
@@ -124,16 +158,21 @@
 	.username{
 		margin-bottom: 15px;
 	}
-	.login-btn{
+	.login-input .btn{
 		margin: 30px auto 15px auto;
 		width: 100%;
 		height: 50px;
-		background-color: #049cdb;
 		border: 0;
 		border-radius: 4px;
 		cursor: pointer;
 	}
-	.login-btn span{
+	.login-btn{
+		background-color: #049cdb;
+	}
+	.register-btn{
+		background-color: #90DF66;
+	}
+	.login-input .btn span{
 		font-size: 18px;
 		color: #ffffff;
 	}
@@ -201,5 +240,19 @@
 	.login-way i{
 		line-height: 40px;
 		font-size: 25px;
+	}
+	.login-header .active{
+		color: #000000;
+	}
+	.email{
+		margin-bottom: 15px;
+	}
+	.register_text{
+		font-size: 12px;
+		color: #9d9d9d;
+	}
+	.register_text a{
+		color: #000000;
+		font-weight: bold;
 	}
 </style>

@@ -46,7 +46,10 @@
 			}
 		},
 		ready: function() {
-			this.articles = [{article: this.texts.Jan}, {article: this.texts.Feb}, {article: this.texts.Mar}, {article: this.texts.Apr}, {article: this.texts.May}, {article: this.texts.Jun}, {article: this.texts.Jul}, {article: this.texts.Aug}, {article: this.texts.Sep}, {article: this.texts.Oct}, {article: this.texts.Nov},  {article: this.texts.Dec}]
+			this.articles = [{article: this.texts.Jan}, {article: this.texts.Feb}, {article: this.texts.Mar}, 
+							 {article: this.texts.Apr}, {article: this.texts.May}, {article: this.texts.Jun}, 
+							 {article: this.texts.Jul}, {article: this.texts.Aug}, {article: this.texts.Sep}, 
+							 {article: this.texts.Oct}, {article: this.texts.Nov},  {article: this.texts.Dec}]
 		}
 	}
 </script>

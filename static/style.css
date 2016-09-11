@@ -139,7 +139,7 @@
   }
   .article-page nav{
     height: 50px;
-    border-bottom: 1px solid #efefef;
+    border-bottom: 2px solid rgba(85, 85, 85, 0.12);
   }
   .nav-text{
     display: inline-block;

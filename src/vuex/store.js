@@ -13,7 +13,7 @@ const state = {
 			comment:'248',
 			like:'2342',
 			pay:'2',
-			src:'url(../../static/vue-demo-hot.jpg'
+			src:'url(../../static/vue-demo-hot.jpg)'
 		},
 		sec: {
 			author:'徐妮',
@@ -23,7 +23,7 @@ const state = {
 			comment:'248',
 			like:'2342',
 			pay:'2',
-			src:'url(../../static/vue-demo-hot.jpg'
+			src:'url(../../static/vue-demo-hot.jpg)'
 		},
 		thi: {
 			author:'徐双妮',
@@ -33,7 +33,7 @@ const state = {
 			comment:'248',
 			like:'2342',
 			pay:'2',
-			src:'url(../../static/vue-demo-hot.jpg'
+			src:'url(../../static/vue-demo-hot.jpg)'
 		}
 	},
 	texts:{
@@ -172,7 +172,7 @@ const state = {
 	},
 	topics:{
 		fir: {
-			img:'url(../../static/topic_1.jpg',
+			img:'../../static/topic_1.jpg',
 			title:'游戏',
 			par:'玩转简书的第一步，从这个专题开始。\
 				  想上首页热门榜么？好内容想被更多人看到么？来投稿吧！\
@@ -184,7 +184,7 @@ const state = {
 			time:'20160620'		
 		},
 		sec: {
-			img:'url(../../static/topic_3.jpg',
+			img:'../../static/topic_3.jpg',
 			title:'诗',
 			par:'诗，让你感受自己的心灵。\
 				 专题主编：苏锦年 投稿须知：\
@@ -198,7 +198,8 @@ const state = {
 		}
 	},
 	show:'hot',
-	show_2:'hot'
+	show_2:'hot',
+	loginway:'login'
 }
 
 const mutations = {
@@ -213,7 +214,7 @@ const mutations = {
 					comment:'248',
 					like:'2342',
 					pay:'2',
-					src:'url(../../static/vue-demo-hot.jpg'
+					src:'url(../../static/vue-demo-hot.jpg)'
 				},
 				sec: {
 					author:'徐妮',
@@ -223,7 +224,7 @@ const mutations = {
 					comment:'248',
 					like:'2342',
 					pay:'2',
-					src:'url(../../static/vue-demo-hot.jpg'
+					src:'url(../../static/vue-demo-hot.jpg)'
 				},
 				thi: {
 					author:'徐双妮',
@@ -233,7 +234,7 @@ const mutations = {
 					comment:'248',
 					like:'2342',
 					pay:'2',
-					src:'url(../../static/vue-demo-hot.jpg'
+					src:'url(../../static/vue-demo-hot.jpg)'
 				}
 			},
 			new: {
@@ -277,7 +278,7 @@ const mutations = {
 					comment:'70',
 					like:'190',
 					pay:'0',
-					src:'../../static/vue-demo-daily.jpg'					
+					src:'url(../../static/vue-demo-daily.jpg)'					
 				},
 				sec: {
 					author:'尸爸',
@@ -287,7 +288,7 @@ const mutations = {
 					comment:'70',
 					like:'190',
 					pay:'0',
-					src:'../../static/vue-demo-daily.jpg'
+					src:'url(../../static/vue-demo-daily.jpg)'
 				},
 				thi: {
 					author:'尸姐',
@@ -297,7 +298,7 @@ const mutations = {
 					comment:'70',
 					like:'190',
 					pay:'0',
-					src:'../../static/vue-demo-daily.jpg'
+					src:'url(../../static/vue-demo-daily.jpg)'
 				}
 			}
 		}
@@ -308,7 +309,7 @@ const mutations = {
 		const topic = {
 			hot: {
 				fir: {
-					img:'url(../../static/vue-demo-hot.jpg',
+					img:'../../static/vue-demo-hot.jpg',
 					title:'游戏',
 					par:'玩转简书的第一步，从这个专题开始。\
 				  		想上首页热门榜么？好内容想被更多人看到么？来投稿吧！\
@@ -319,7 +320,7 @@ const mutations = {
 					keys:'故事、连载'
 				},
 				sec: {
-					img:'url(../../static/topic_3.jpg',
+					img:'../../static/topic_3.jpg',
 					title:'诗',
 					par:'诗，让你感受自己的心灵。\
 				 	专题主编：苏锦年 投稿须知：\
@@ -334,7 +335,7 @@ const mutations = {
 			},
 			recommend: {
 				fir: {
-					img:'url(../../static/topic_1.jpg',
+					img:'../../static/topic_1.jpg',
 					title:'游戏',
 					par:'玩转简书的第一步，从这个专题开始。\
 				  		 想上首页热门榜么？好内容想被更多人看到么？来投稿吧！\
@@ -346,7 +347,7 @@ const mutations = {
 					time:'20160620'		
 				},
 				sec: {
-					img:'url(../../static/topic_3.jpg',
+					img:'../../static/topic_3.jpg',
 					title:'诗',
 					par:'诗，让你感受自己的心灵。\
 				 		专题主编：苏锦年 投稿须知：\
@@ -359,7 +360,7 @@ const mutations = {
 					time:'20160630'
 				},
 				thi: {
-					img:'url(../../static/topic_2.jpg',
+					img:'../../static/topic_2.jpg',
 					title:'@IT互联网',
 					par:'@IT 专题 由 IT大分类，转定位于IT·互联网行业观察与思考，数码产品极客体验。\
 					主编：向右奔跑 http://www.jianshu.com/users/54b5900965ea...',			
@@ -409,6 +410,9 @@ const mutations = {
     		}
     		return myNewObj;
 		}
+	},
+	CHANGELOGIN (statem, loginway){
+		state.loginway = loginway
 	}
 }
 export default new Vuex.Store({
