@@ -18,49 +18,49 @@
 					<input type="search" placeholder="搜索">
 				</span>
 				<span class="search-icon"><i class="fa fa-search"></i></span>
-			</span>					
+			</span>
 		</nav>
 		<div class="article-list">
 			<ul class="btn-group">
 				<li :class="{active: show === 'hot'}">
 					<a @click="displayArticle('hot')"
-					   v-link="'/home/article'" 
+					   v-link="'/home/article'"
 					>热门</a></li>
 				<li :class="{active: show === 'new'}">
 					<a @click="displayArticle('new')"
-					   v-link="'/home/article'" 
+					   v-link="'/home/article'"
 					>新上榜</a></li>
 				<li :class="{active: show === 'daily'}">
 					<a @click="displayArticle('daily')"
-					   v-link="'/home/article'" 
+					   v-link="'/home/article'"
 					>日报</a></li>
 				<li :class="{active: show === 'weekhot'}">
 					<a @click="show = 'weekhot'"
-					   v-link="'/home/article'" 
+					   v-link="'/home/article'"
 					>七日热门</a></li>
 				<li :class="{active: show === 'monthhot'}">
 					<a @click="show = 'monthhot'"
-					   v-link="'/home/article'" 
+					   v-link="'/home/article'"
 					>三十日热门</a></li>
 				<li :class="{active: show === 'reward'}">
 					<a @click="show = 'reward'"
-					   v-link="'/home/article'" 
+					   v-link="'/home/article'"
 					>有奖活动</a></li>
 				<li :class="{active: show === 'publish'}">
 					<a @click="show = 'publish'"
-					   v-link="'/home/article'" 
+					   v-link="'/home/article'"
 					>简书出版</a></li>
 				<li :class="{active: show === 'video'}">
 					<a @click="show = 'vedio'"
-					   v-link="'/home/article'" 
+					   v-link="'/home/article'"
 					>简书播客</a></li>
 				<li :class="{active: show === 'hotnews'}">
 					<a @click="show = 'hotnews'"
-					   v-link="'/home/article'" 
+					   v-link="'/home/article'"
 					>时事热闻</a></li>
 				<li :class="{active: show === 'choice'}">
 					<a @click="show = 'choice'"
-					   v-link="'/home/article'" 
+					   v-link="'/home/article'"
 					>专题精选</a></li>
 
 			</ul>
