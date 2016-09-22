@@ -16,18 +16,19 @@
           <input type="search" placeholder="搜索">
         </span>
         <span class="search-icon"><i class="fa fa-search"></i></span>
-      </span>       
+      </span>
     </nav>
     <div class="article-list">
       <ul class="btn-group">
         <li :class="{active: show === 'hot'}">
           <a @click="displayTopic('hot')"
-             v-link="'/topic/topic_article'" 
+             v-link="'/topic/topic_article'"
           >热门</a></li>
         <li :class="{active: show === 'recommend'}">
           <a @click="displayTopic('recommend')"
-             v-link="'/topic/topic_article'" 
+             v-link="'/topic/topic_article'"
           >推荐</a></li>
+        </ul>
     </div>
     <router-view></router-view>
   </div>
@@ -45,5 +46,5 @@
         displayTopic
       }
     }
-  } 
+  }
 </script>
