@@ -93,10 +93,11 @@
 </style>
 <script>
 import { displayArticle} from '../vuex/actions'
+import { getShow } from '../vuex/getters'
 export default{
 	vuex: {
 		getters: {
-			show: state => state.show
+			show: getShow
 		},
 		actions: {
 			displayArticle
