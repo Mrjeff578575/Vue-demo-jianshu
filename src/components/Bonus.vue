@@ -37,14 +37,15 @@
   </div>
 </template>
 <script>
+  import { getBonusTexts } from '../vuex/getters'
   export default {
     data () {
-      let articles = ''
+      let articles = [];
       return {articles}
     },
     vuex: {
       getters: {
-        texts: state => state.texts
+        texts: getBonusTexts
       }
     },
     ready: function () {

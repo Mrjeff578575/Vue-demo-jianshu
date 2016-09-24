@@ -1,23 +1,27 @@
 <template>
 	<ul>
 		<li class='list' v-for="article in articles">
-			<p class="list-top"><a href="#" class="author"><span>{{ article.author }}</span></a><span class="time"> - {{ article.time}}</span></p>
+			<p class="list-top">
+        <a href="#" class="author"><span>{{ article.author }}</span></a>
+        <span class="time"> - {{ article.time}}</span>
+      </p>
 			<h2 class="title"><a href="#">{{ article.title }}</a></h2>
 			<span class="small-text">阅读 {{article.read}} -</span>
 			<span class="small-text">评论 {{article.comment}} -</span>
 			<span class="small-text">喜欢 {{article.like}} -</span>
 			<span class="small-text">打赏 {{article.pay}}</span>
-			<span class="image" 
+			<span class="image"
 				:style="{backgroundImage:article.src, backgroundSize:'100%', backgroundRepeat:'no-repat'}">
 			</span>
 		</li>
 	</ul>
 </template>
 <script>
+  import { getArticles } from '../vuex/getters'
 	export default {
 		vuex: {
 			getters: {
-				articles: state => state.articles
+				articles: getArticles
 			}
 		}
 	}
@@ -33,7 +37,7 @@
 		border-bottom: 1px dashed #d9d9d9;
 	}
 	.list-top{
-		padding-top: 10px; 
+		padding-top: 10px;
 	}
 	.list .title a{
 		margin-top: 10px;

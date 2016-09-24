@@ -1,50 +1,30 @@
 import Vue from 'vue'
 import App from './App'
 import VueRouter from 'vue-router'
+import routerMap from './routers'
 
-import home from './components/Home.vue'
-import topic from './components/Topic.vue'
-import article from './components/Article.vue'
-import bonus from './components/Bonus.vue'
-import login from './components/Login.vue'
-import topic_article from './components/Topic_article.vue'
-import download from './components/Download.vue'
 
-Vue.use(VueRouter)
-
-const router = new VueRouter()
-
-router.map({
-	'/home': {
-		component: home,
-		subRoutes: {
-			'/article': {
-				component: article
-			}
-		}
-	},
-	'/topic': {
-		component: topic,
-		subRoutes: {
-			'topic_article': {
-				component: topic_article
-			}
-		}
-	},
-	'/bonus': {
-		component: bonus
-	},
-	'/login': {
-		component: login
-	},
-	'/download': {
-		component: download
-	}
-})
-
+Vue.use(VueRouter);
+const router = new VueRouter();
+router.mode = "html5";
+//路由钩子
+router.beforeEach((transition)=> {
+  //跳转前可进行验证等操作
+  if (transition.to.auth) {
+    // console.log(transition.to.path);
+  } else {
+    // console.log("transition.next()");
+    transition.next();
+  }
+});
+router.afterEach(function (transition) {
+  //跳转后的一些操作
+  console.log('成功浏览到: ' + transition.to.path)
+});
+// 默认跳转
 router.redirect({
-	'*':'/home/article'
-})
-
-router.start(App,'app')
-router.go('/home/article')
+  '*': '/home/article'
+});
+// router.go('/home/article');//手动跳转
+routerMap(router);
+router.start(App, 'app');

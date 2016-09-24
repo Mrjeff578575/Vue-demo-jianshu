@@ -36,11 +36,11 @@
 </template>
 <script>
   import {displayTopic} from '../vuex/actions'
-
+  import { getShow_2 } from '../vuex/getters'
   export default {
     vuex:{
       getters:{
-        show: state => state.show_2
+        show: getShow_2
       },
       actions:{
         displayTopic

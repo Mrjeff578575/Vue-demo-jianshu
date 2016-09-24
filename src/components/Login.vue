@@ -2,9 +2,9 @@
 	<div class="login-container">
 		<div class="login-logo"></div>
 		<div class="login-header">
-			<a  :class="{active: loginway == 'login'}" 
+			<a  :class="{active: loginway == 'login'}"
 						@click="changeLogin('login')">&nbsp;&nbsp;&nbsp;&nbsp;登录&nbsp;&nbsp;&nbsp;&nbsp;·</a>
-			<a  :class="{active: loginway == 'register'}" 
+			<a  :class="{active: loginway == 'register'}"
 						@click="changeLogin('register')">&nbsp;&nbsp;&nbsp;&nbsp;注册&nbsp;&nbsp;&nbsp;&nbsp;</a></div>
 		<div class="login-input" v-if="loginway === 'login' ">
 			<form class="form_login" accept-charset="UTF-8" method="post">
@@ -45,7 +45,7 @@
 				<button class="register-btn btn" type="submit"><span>注册</span></button>
 				<p class="register_text">点击 “注册” 或下方社交登录按钮，即表示您同意并愿意遵守简书 <a href="#">用户协议</a> 和 <a href="#">隐私政策</a> 。</p>
 			</form>
-		</div>			
+		</div>
 		<div class="login-way">
 			<h5>您还可以通过以下方式登录</h5>
 			<ul>
@@ -60,14 +60,15 @@
 </template>
 <script>
 import { changeLogin } from '../vuex/actions'
+import { getLoginWay } from '../vuex/getters'
 	export default{
 		data () {
-			let checked = 'true'
+			let checked = 'true';
 			return {checked}
 		},
 		vuex:{
 			getters:{
-				loginway: state => state.loginway
+				loginway: getLoginWay
 			},
 			actions:{
 				changeLogin
@@ -135,7 +136,7 @@ import { changeLogin } from '../vuex/actions'
 		border-radius: 4px 0 0 4px;
 		line-height: 34px;
 	}
-	.span2{		
+	.span2{
 		width: 246px;
 		height: 44px;
 		position: relative;
@@ -143,7 +144,7 @@ import { changeLogin } from '../vuex/actions'
 		padding: 4px 12px;
 		border:1px solid #ccc;
 		border-radius: 0 4px 4px 0;
-		transition: border linear 0.2s; 
+		transition: border linear 0.2s;
 		box-sizing: border-box;
 	}
 	.span2:focus{
@@ -176,7 +177,7 @@ import { changeLogin } from '../vuex/actions'
 		font-size: 18px;
 		color: #ffffff;
 	}
-	.checkbox{	
+	.checkbox{
     	display: inline-block;
     	vertical-align: middle;
     	position: relative;

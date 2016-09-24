@@ -2,7 +2,7 @@
 	<div class="topic_article_container">
 		<div class="sequence-nav" v-if="show === 'recommend'">
 			<a @click="sortContent('time'), change = 'new'"
-			:class="{active: change === 'new'}">最新更新&nbsp;&nbsp;·</a>			
+			:class="{active: change === 'new'}">最新更新&nbsp;&nbsp;·</a>
 			<a @click="change = 'hot'"
 			:class="{active: change === 'hot'}">热门排序&nbsp;&nbsp;·</a>
 			<a @click="sortContent('concern'), change = 'new'"
@@ -29,15 +29,16 @@
 </template>
 <script>
 	import { sortContent } from '../vuex/actions'
+  import { getTopics,getShow_2 } from '../vuex/getters'
 	export default {
 		data (){
-			let change = 'hot'
+			let change = 'hot';
 			return {change}
 		},
 		vuex: {
 			getters: {
-				topic: state => state.topics,
-				show: state => state.show_2
+				topic: getTopics,
+				show: getShow_2
 			},
 			actions: {
 				sortContent
@@ -67,7 +68,7 @@
 		float: left;
 		width: 40px;
 		height: 40px;
-		border-radius: 50%;		
+		border-radius: 50%;
 	}
 	.ttopic_article_img:after{
 		display: block;
@@ -79,7 +80,7 @@
 	.topic_article_img img{
 		width: 100%;
    		height: 100%;
-    	border: 2px solid white;   	
+    	border: 2px solid white;
     	box-sizing: border-box;
     	border-radius: 50%;
 	}
